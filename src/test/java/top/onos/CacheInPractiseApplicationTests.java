@@ -30,7 +30,9 @@ public class CacheInPractiseApplicationTests {
 
 		studentService.getAll();*/
 		/*测试应用采用的缓存管理器*/
+		logger.info("=======================================================");
 		logger.info(cacheManager.toString());
+		logger.info("=======================================================");
 
 	}
 
