@@ -49,7 +49,7 @@ public class AppConfig {
     @Bean
     public CacheManager cacheManager() {
         MemcacheClientFactoryImpl memcacheClientFactory = new MemcacheClientFactoryImpl();
-        AddressProvider addressProvider = new DefaultAddressProvider("192.168.78.129:11211");
+        AddressProvider addressProvider = new DefaultAddressProvider("192.168.78.129:11211,54.64.103.64:11211");
         CacheConfiguration cacheConfiguration = new CacheConfiguration();
         cacheConfiguration.setConsistentHashing(true);
 

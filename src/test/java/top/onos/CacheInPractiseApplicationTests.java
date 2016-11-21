@@ -8,14 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.cache.CacheManager;
 import org.springframework.test.context.junit4.SpringRunner;
-import top.onos.domain.Student;
 import top.onos.service.StudentService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class MemcachedInPractiseApplicationTests {
+public class CacheInPractiseApplicationTests {
 
-	private static final Logger logger = LoggerFactory.getLogger(MemcachedInPractiseApplication.class);
+	private static final Logger logger = LoggerFactory.getLogger(CacheInPractiseApplication.class);
 
 	@Autowired
 	private CacheManager cacheManager;

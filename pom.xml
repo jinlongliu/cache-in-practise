@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.example</groupId>
-	<artifactId>memcached_in_practise</artifactId>
+	<artifactId>cache_in_practise</artifactId>
 	<version>1.0</version>
 	<packaging>war</packaging>
 
@@ -82,6 +82,11 @@
         <dependency>
             <groupId>com.google.code.simple-spring-memcached</groupId>
             <artifactId>xmemcached-provider</artifactId>
+            <version>3.6.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.simple-spring-memcached</groupId>
+            <artifactId>spring-cache</artifactId>
             <version>3.6.1</version>
         </dependency>
         <dependency>
