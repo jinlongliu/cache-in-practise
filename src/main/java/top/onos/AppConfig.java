@@ -1,30 +1,23 @@
 package top.onos;
 
-import com.google.code.ssm.Cache;
-import com.google.code.ssm.CacheFactory;
-import com.google.code.ssm.config.AddressProvider;
-import com.google.code.ssm.config.DefaultAddressProvider;
-import com.google.code.ssm.providers.CacheConfiguration;
-import com.google.code.ssm.providers.xmemcached.MemcacheClientFactoryImpl;
-import com.google.code.ssm.spring.SSMCache;
-import com.google.code.ssm.spring.SSMCacheManager;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
-import java.util.ArrayList;
 
 /**
  * Created by Liu on 2016/11/18.
  */
 /*注解声明为配置类*/
 @Configuration
+@EnableCaching
+//@EnableAutoConfiguration
 /*注解声明mapper自动扫描路径 和 <mybatis:scan/>同样效果 */
 @MapperScan("top.onos.mapper")
 public class AppConfig {
@@ -46,7 +39,9 @@ public class AppConfig {
         return sessionFactory.getObject();
     }
 
-    @Bean
+
+    /*注释自定义CacheManager让Spring Boot按照依赖和顺序原则选择Cache Manager*/
+/*    @Bean
     public CacheManager cacheManager() {
         MemcacheClientFactoryImpl memcacheClientFactory = new MemcacheClientFactoryImpl();
         AddressProvider addressProvider = new DefaultAddressProvider("192.168.78.129:11211,54.64.103.64:11211");
@@ -75,7 +70,6 @@ public class AppConfig {
         ssmCacheManager.setCaches(ssmCaches);
 
         return ssmCacheManager;
-    }
-
+    }*/
 
  }
